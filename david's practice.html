@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Java web</title>
+    <link rel="stylesheet" href="david's practicestyle.css">
+    </head>
+    <body>
+        <div class="intro">
+            <h1><strong><em>wassup yo✌️</em></strong></h1>
+            <h2><strong><em>are you interested in learning instrument</em></strong> 🎹🎺🎷🎸???</h2>
+            <h3>well you have come to the <strong><em>right place</em></strong>👍</h3>
+            <h3><strong><em>you can learn any instrument you want to</em></strong>👌</h3>
+            <h3><strong><em>my goal is to teach people instruments</em></strong>🥰</h3>
+            <h3><strong><em>and collect ur money sha </em></strong>🤑💵</h3>
+        </div>
+        <div class="floating-word" id="float"><strong><em>DAVID RULES</em></strong></div>
+        <script>
+                        const word = document.getElementById('float');
+            let x = 100;
+            let y = 200;
+            let dx = 2.5; // speed x
+            let dy = 2; // speed y
+            function animate() {
+                const wordWidth = word.offsetWidth;
+                const wordHeight = word.offsetHeight;
+                x += dx;
+                y += dy;
+                //bounce off edges
+                if (x + wordWidth >
+                    window.innerWidth || x < 0){
+                        dx = -dx;
+                    }
+                    if (y + wordHeight >
+                        window.innerHeight || y < 0){
+                            dy = -dy;
+                        }
+                        word.style.left = x + 'px';
+                        word.style.top = y + 'px';
+                        requestAnimationFrame(animate);
+            }
+
+            // start from random position
+            x = Math.random() *
+            (window.innerWidth - 200);
+            y = Math.random() *
+            (window.innerHeight - 100);
+                    animate();
+            // resize fix
+            window.addEventListener('resize', ()=>{
+                x = Math.min(x,
+                    window.innerWidth - word,offsetWidth);
+                y = Math.min(y,
+            window.innerHeight - word.offsetHeight);
+            });
+        </script>
+    </body>
+</html>
